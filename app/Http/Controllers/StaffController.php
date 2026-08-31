@@ -12,7 +12,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return response()->json([
+        return response()->json([ //ham veriyi döndürür.JSON verisi.
             'success' => true,
             'data' => Staff::all(),
 
@@ -46,7 +46,7 @@ class StaffController extends Controller
      */
     public function show(string $id)
     {
-        $staff = Staff::find($id);
+        $staff = Staff::find($id); //staff($id) kullanıcıdan alınmış ve bu satırda da veritabanında aranmış.
 
         if (!$staff) {
             return response()->json(['success' => false, 'message' => 'Personel bulunamadı.'], 404);

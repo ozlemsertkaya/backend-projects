@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
 {
-    //
-    use HasFactory;
+    //use ise özellik kullanabilme yöntemi.
+    use HasFactory; //Product modeline sahte veri üretebilme yeteneği kazandırır.
     protected $table = 'staff';
     protected $fillable = [
         'name',

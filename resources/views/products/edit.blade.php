@@ -23,12 +23,12 @@
 
         <form action="{{ route('products.update', $product) }}" method="POST">
             @csrf
-            @method('PUT')
+            @method('PUT')//HTML sadece get ve post destekler.burada satır forma gizli bir input ekliyor
             <div class="mb-3">
                 <label class="form-label">Ürün Adı</label>
                 <input type="text" name="name" class="form-control" value="{{ old('name', $product->name) }}">
-            </div>
-            <div class="mb-3">
+            </div> {{-- kullanıcı hata aldığında devreye girer yanlış bile olsa önceki değeri gösterir. --}}
+            <div class="mb-3"> {{-- sayfa ilk açıldığında mevcut değer gösterilir(product->name) --}}
                 <label class="form-label">Açıklama</label>
                 <textarea name="description" class="form-control">{{ old('description', $product->description) }}</textarea>
             </div>

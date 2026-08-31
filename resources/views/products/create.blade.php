@@ -21,12 +21,13 @@
             </div>
         @endif
 
-        <form action="{{ route('products.store') }}" method="POST">
-            @csrf
+        <form action="{{ route('products.store') }}" method="POST">fo{{-- rm gönderildiğinde,verinin nereye gönderileceğini --}}
+            @csrf{{-- //güvenlik için zorunlu --}}
             <div class="mb-3">
                 <label class="form-label">Ürün Adı</label>
                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
-            </div>
+            </div> {{-- name=name controller daki ile eşleşmek zorunda. old() ise hatayı düzeltmek istediğinde eski veriler
+            tutulsun diye --}}
             <div class="mb-3">
                 <label class="form-label">Açıklama</label>
                 <textarea name="description" class="form-control">{{ old('description') }}</textarea>
@@ -40,7 +41,8 @@
                 <input type="number" name="stock" class="form-control" value="{{ old('stock') }}">
             </div>
             <button type="submit" class="btn btn-success">Kaydet</button>
-            <a href="{{ route('products.index') }}" class="btn btn-secondary">Vazgeç</a>
+            <a href="{{ route('products.index') }}" class="btn btn-secondary">Vazgeç</a>{{-- //link.kullanıcıyı listeye geri
+            götürür. --}}
         </form>
     </div>
 </body>

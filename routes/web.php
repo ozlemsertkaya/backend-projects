@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProductController;
 
-Route::resource('products', ProductController::class);
+Route::get('/products-data', [ProductController::class, 'data'])->name('products.data'); //DataTable sayfa ilk açıldığında arka planda ayrı bir istek atıp veriyi kendisi çekecek.index() ile uğraşmıyoruz.
+Route::resource('products', ProductController::class); //create edit formları dahil 7 fonk. içn route oluşturur.
 
 Route::get('/', function () {
     return 'Rota 1 Çalışıyor.';

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="container mt-4">
+    <div class="container mt-4">{{-- sadece veri gösteriyor. --}}
         <h2>{{ $product->name }}</h2>
 
         <table class="table table-bordered w-50">
